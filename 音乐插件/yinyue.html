@@ -1,0 +1,161 @@
+﻿<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>音乐模块</title>
+  <style>
+	*{padding:0;margin:0;}
+	body{background:url(images/bg.jpg) top center no-repeat;}
+	@keyframes phantom{from{transform:rotate(0deg)}
+						to{transform:rotate(360deg)}
+					}
+	.mh-misic{width:960px;height:250px;background:url(images/banner_bg.jpg) top center no-repeat;margin:100px auto;opacity:0.7;position:relative}
+	.mh-misic ul li{position:absolute;list-style:none;}
+	.mh-misic ul .m_1{top:30px;left:6px;}
+	.mh-misic ul .m_1 img{border-radius:30px;}
+	.mh-misic ul .m_2{top:105px;left:80px;}
+	.mh-misic ul .m_2 img{border-radius:45px;}
+	.mh-misic ul .m_3{top:18px;left:188px;}
+	.mh-misic ul .m_3 img{border-radius:30px;}
+	.mh-misic ul .m_4{bottom:10px;left:190px;}
+	.mh-misic ul .m_4 img{border-radius:30px;}
+	.mh-misic ul .m_5{top:5px;left:286px;}
+	.mh-misic ul .m_5 img{border-radius:30px;}
+	.mh-misic ul .m_6{bottom:10px;left:398px;}
+	.mh-misic ul .m_6 img{border-radius:30px;}
+	.mh-misic ul .m_7{bottom:60px;left:308px;}
+	.phantom{animation:phantom infinite linear 5s;}
+	.mh-misic ul .m_7 img{border-radius:62px;}
+	.mh-misic ul .m_8{top:28px;left:488px;}
+	.mh-misic ul .m_8 img{border-radius:45px;}
+	.mh-misic ul .m_9{width:60px;height:60px;bottom:20px;right:325px;background:linear-gradient(20deg,#ccc,#f6f);border-radius:30px;cursor:pointer;}
+	.mh-misic ul .m_10{top:70px;right:40px;text-shadow:1px 1px 2px #c36;color:#0cf;}
+	.musicbox{width:540px;height:115px;background:#000;position:fixed;bottom:80px;left:0px;opacity:0.85;border-radius:0 5px 5px 0;}
+	.musicbox .b_tu img{display:block;float:left;margin:13px 0 0 10px;}
+	.musicbox .b_tu .txt{float:left;font-size:20px;color:#c90;padding-left:10px;height:115px;line-height:115px;}
+	.musicbox .m_btn{width:180px;height:115px;float:left;margin-left:40px;position:absolute;top:0;left:280px;}
+	.musicbox .m_btn a{display: block;background:url("images/player_bg.png");float: left;margin: 5px 10px;}
+	.musicbox .m_btn .b_shang{width:36px;height:28px;background-position:-69px 0;margin-top:42px;}
+	.musicbox .m_btn .b_shang:hover{background-position:-69px -32px;}
+	.musicbox .m_btn .b_play{width:36px;height:34px;background-position:-105px -4px;margin-top:38px;}
+	.musicbox .m_btn .b_play:hover{background-position:-104px -46px;}
+	.musicbox .m_btn .b_stop{width:36px;height:34px;background-position:-294px -92px;display:none;margin-top:38px;}
+	.musicbox .m_btn .b_stop:hover{background-position:-333px -92px;}
+	.musicbox .m_btn .b_xia{width:36px;height:28px;background-position:-148px 0;margin-top:42px;}
+	.musicbox .m_btn .b_xia:hover{background-position:-148px -32px;}
+	.musicbox .m_shou{width:22px;height:120px;background:url(images/player_bg.png) no-repeat;background-position:0 0;float:right;cursor:pointer;}
+	.musicbox .m_fang{background-position:-46px 0;}
+	.musicbox .m_center{background-position:-23px 0;}
+	.mh-misic ul .m_9 #hf{display:block;width:60px;height:60px;border-radius:30px;}
+  </style>
+ </head>
+ <body>
+	<div class="mh-misic">
+		<ul>
+			<li class="m_1"><a href="#" class="items" title="咱们结婚吧" data-url="yinyue/1.mp3"><img src="images/1.jpg" width="60" height="60" alt="齐晨"/></a></li>
+			<li class="m_2"><a href="#" class="items" title="时光倒流" data-url="yinyue/2.mp3"><img src="images/2.jpg" width="90" height="90" alt="刘丹萌"/></a></li>
+			<li class="m_3"><a href="#" class="items" title="Rhythm Of Rainy Days" data-url="yinyue/3.mp3"><img src="images/3.jpg" width="60" height="60" alt="夏后"/></a></li>
+			<li class="m_4"><a href="#" class="items" title="子时" data-url="yinyue/4.mp3"><img src="images/4.jpg" width="60" height="60" alt="孙子涵"/></a></li>
+			<li class="m_5"><a href="#" class="items" title="阻止你哭泣" data-url="yinyue/5.mp3"><img src="images/5.jpg" width="60" height="60" alt="周玥"/></a></li>
+			<li class="m_6"><a href="#" class="items" title="恋人心" data-url="yinyue/6.mp3"><img src="images/6.jpg" width="60" height="60" alt="魏新雨"/></a></li>
+			<li class="m_7"><a href="#" class="items" title="Party" data-url="yinyue/7.mp3"><img src="images/7.jpg" width="124" height="124" alt="少女时代"/></a></li>
+			<li class="m_8"><a href="#" class="items" title="下一首悲伤" data-url="yinyue/8.mp3"><img src="images/8.jpg" width="90" height="90" alt="单色凌"/></a></li>
+			<li class="m_9"><a href="#" id="hf"></a><li>
+			<li class="m_10">
+				<img src="images/phantom.png" width="81" height="81" alt="phantom"/>
+				<p>丿丨灬catch/魅幻</p>
+			</li>
+		</ul>
+	</div>
+	<div class="musicbox">
+		<div class="b_tu"><img src="images/2.jpg" width="90" height="90" alt="刘丹萌"/><p class="txt">时光倒流</p></div>
+		<div class="m_btn">
+		<a href="#" class="b_shang"></a>
+		<a href="#" class="b_play"></a>
+		<a href="#" class="b_stop"></a>
+		<a href="#" class="b_xia"></a>
+		</div>
+		<div class="m_shou"></div>
+	</div>
+	<div id="audiobox">
+		<audio src="mp3/2.mp3"></audio>
+	</div>
+	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			var audioDom = createMp3("yinyue/2.mp3");
+
+			var index = 0;
+
+			$(".m_shou").click(function(){
+				var width = $(".musicbox").width() - 22;
+				var left = $(".musicbox").offset().left;
+				var n = 1;
+				if(left < 0){
+					n = 0;
+					$(this).removeClass("m_fang").addClass("m_center");
+				}
+				$(".musicbox").animate({left:-width*n},1000,function(){
+					if(n == 0){
+						$(this).find(".m_shou").removeClass("m_fang").removeClass("m_center");
+					}else{
+						$(this).find(".m_shou").addClass("m_fang");
+					}
+				});
+			});
+			$(".items").click(function(){
+			var url = $(this).data("url");
+			var title = $(this).attr("title");
+			var imgsrc = $(this).find("img").attr("src");
+			$(".b_tu").find("img").attr("src",imgsrc);
+			$(".b_tu").find(".txt").text(title);
+			audioDom = createMp3(url);
+			$(".b_play").trigger("click");
+			$(".items").find("img").removeClass("phantom");
+			$(this).find("img").addClass("phantom");
+
+		});
+			$(".b_play").click(function(){
+				audioDom.play();
+				$(this).hide();
+				$(".b_stop").show();
+			});
+			$(".b_stop").click(function(){
+				audioDom.pause();
+				$(this).hide();
+				$(".b_play").show();
+			});
+		$(".b_xia").click(function(){
+			index ++;
+			$(".items").eq(index).trigger("click");
+		});
+
+		$(".b_shang").click(function(){
+			index --;
+			$(".items").eq(index).trigger("click");
+		});
+		});
+
+		function createMp3(src){
+			var audioDom = document.createElement("audio");
+
+			audioDom.src = src;
+			document.getElementById("audiobox").innerHTML = "";
+			document.getElementById("audiobox").appendChild(audioDom);
+			return audioDom;
+		}
+		$("#hf").click(function(){
+			var b =parseInt(Math.random() * (30 + 1));
+			if(b == 0){
+			$("body").css({"background":"url(images/bg.jpg)"});
+			}else{
+			$("body").css({"background":"url(images/bizhi/"+b+".jpg)"});
+			}
+		});
+	</script>
+ </body>
+</html>

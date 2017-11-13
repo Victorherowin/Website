@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>我的模板</title>
+  <style>
+		*{padding:0;margin:0;}
+		body{
+			background:url(http://pan.baidu.com/share/link?shareid=3385716919&uk=1565275458/uploadImages/2012/317/NU0205Q17DF7_1920x1080.jpg);
+		}
+		a{
+			margin:40px;
+			display:block;
+			width:90px;
+			height:40px;
+			background:linear-gradient(20deg,#fcc,#3cf);
+			font-size:16px;
+			font-family:"微软雅黑";
+			text-decoration:none;
+			color:#f09;
+			text-align:center;
+			line-height:40px;
+			border-radius:5px;
+			box-shadow:2px 2px 2px #c00;
+			transition:all 0.5s linear;
+		}
+		a:hover{
+			background:linear-gradient(20deg,#3cf,#fcc);
+			transition:all 0.5s linear;
+			transform:scale(1.2);
+		}
+  </style>
+ </head>
+ <body>
+	<a href="#" onclick="start();">播放</a>
+	<a href="#" onclick="pause()">暂停</a>
+	<a href="#">换肤</a>
+	<script type="text/javascript">
+		var audioDom = document.createElement("audio");
+		audioDom.src="krystal.mp3";
+		function start(){
+			audioDom.play();
+		}
+		function pause(){
+			audioDom.pause();
+		}
+	</script>
+ </body>
+</html>

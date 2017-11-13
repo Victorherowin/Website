@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>我的模板</title>
+  <style type="text/css">
+		*{padding:0;margin:0}
+		body{color:#fff;}
+		#wrap{background:#789;margin:0 auto; width:960px;}
+		#header{background:#ff3300;width:100% }
+
+		#mainbody{background:#666;width:100%;height:300px;}
+		#footer{background:#156;width:100%; height:123px;}
+		.left{width:800px;height:290px;background:#000;float:left;margin-top:5px;}
+		.right{width:160px;height:290px;background:#690;float:left;margin-top:5px;}
+		a { color: #333; text-decoration: none }
+ul { list-style: none; height: 30px; border-bottom: 5px solid #F60; margin-top: 20px; padding-left: 50px; }
+ul li { float: left }
+ul li a { display: block; height: 30px; text-align: center; line-height: 30px; width:120px; background: #efefef; margin-left: 1px; }
+a.on, a:hover { background: #F60; color: #fff; }
+<script>
+window.onload=function(){
+    var aA=document.getElementsByTagName('a');
+	for(var i=0; i<aA.length; i++){
+		aA[i].onmouseover=function(){
+			var This=this;
+			clearInterval(This.time);
+			This.time=setInterval(function(){
+					This.style.width=This.offsetWidth+8+"px";
+					if(This.offsetWidth>=160)
+					clearInterval(This.time);
+				},30)
+		}
+		aA[i].onmouseout=function(){
+				clearInterval(this.time);
+				var This=this;
+				this.time=setInterval(function(){
+					This.style.width=This.offsetWidth-8+"px";
+					if(This.offsetWidth<=120){
+						This.style.width='120px';
+						clearInterval(This.time);
+					}
+				},30)
+		}
+	}
+}
+</script>
+a{
+			margin:40px;
+			display:block;
+			width:90px;
+			height:40px;
+			background:linear-gradient(20deg,#fcc,#3cf);
+			font-size:16px;
+			font-family:"微软雅黑";
+			text-decoration:none;
+			color:#f09;
+			text-align:center;
+			line-height:40px;
+			border-radius:5px;
+			box-shadow:2px 2px 2px #c00;
+			transition:all 0.5s linear;
+		}
+		a:hover{
+			background:linear-gradient(20deg,#3cf,#fcc);
+			transition:all 0.5s linear;
+			transform:scale(1.2);
+		}
+  </style>
+ </head>
+ <body>
+	<div id="wrap">
+		<div id="header">头部<ul>
+    <li><a class="on" href="#">首　　页</a></li>
+    <li><a href="#">马克.扎克伯格</a></li>
+    <li><a href="#">马云</a></li>
+    <li><a href="#">李想</a></li>
+    <li><a href="#">雷军</a></li>
+    <li><a href="#">周宏伟</a></li>
+    <li><a href="#">余佳文</a></li>
+</ul></div>
+		<div id="mainbody">
+			<div class="left">
+            <h1>我们的梦想</h1>
+			<ul>无论你的老大怎么逼你，怎么带你，怎么指点你，如果你一点执行力都没有，你就是跟着马云也没用！
+为什么普通列车跑不过高铁？因为普通列车每节车厢全靠车头带，每节车厢都承载着负能量；而高铁每节车厢都有一个发动机在全力以赴往前，每节车厢都是正能量！
+结论：执行力，才是团队的核心！
+信任度，才是团队的灵魂！凝结力，才是团队的力量！
+一群人，一件事，一起拼，一定赢！
+人不可能长生不老，至少要去尝试搬动一下创新的开关，没有什么比去冒险，去投入精力，去投入夜晚和周末更美妙。</ul>
+
+			</div>
+            
+			<div class="right">
+			<ul><li>你们能不能完成任务</li>
+			<li>你们对未来是否有规划</li>
+			<li>我不要求你们一定可以走下，至少着手于当下</li>
+			</ul>
+		</div>
+        
+	<div id="footer">版权
+    <a href="#" onclick="start();">播放</a>
+	<a href="#" onclick="pause()">暂停</a>
+	<a href="#">换肤</a>
+	<script type="text/javascript">
+		var audioDom = document.createElement("audio");
+		audioDom.src="krystal.mp3";
+		function start(){
+			audioDom.play();
+		}
+		function pause(){
+			audioDom.pause();
+		}
+	</script>
+    </div>
+ </body>
+</html>
